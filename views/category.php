@@ -5,7 +5,7 @@
         include 'navigator/menu_avatar.php';
         include 'navigator/menu_sidebar.php';
         include 'navigator/menu_cate.php';
-      ?>
+        ?>
     </div>
     <div class="nine columns main">
 <?php if (empty($_SESSION['user_id'])) {?>
@@ -18,10 +18,10 @@ Password  : 123456</code></pre>
 <?php } ?>
 <?php
 $perpage = 12;
-if(!empty($_GET['p'])){
-  $page = mysqli_escape_string($DBConnect, $_GET['p']);
+if (!empty($_GET['p'])) {
+    $page = mysqli_escape_string($DBConnect, $_GET['p']);
 } else {
-  $page = 1;
+    $page = 1;
 }
 
 $start = ($page - 1) * $perpage;
@@ -45,8 +45,7 @@ $query = mysqli_query($DBConnect, $sql, MYSQLI_STORE_RESULT) or die ("Query Erro
 $num_row = mysqli_num_rows($query);
 /*ล้างคำค้นหา*/
 if (!empty($_GET['search']) && !empty($_GET['clear']) && $_GET['search'] == true) {
-
-  header("location: ?action=admin&manage=account&search=&sort=$sort");
+    header("location: ?action=admin&manage=account&search=&sort=$sort");
 }
 $sql2 = "SELECT * FROM `product_category` WHERE `product_list`.`cate_id` = '".$_GET['filter']."'";
 $query2 = mysqli_query($DBConnect, $sql, MYSQLI_STORE_RESULT) or die ("Query Error");
@@ -58,11 +57,11 @@ $row2 = mysqli_fetch_assoc($query2);
         <div class="alert-error" id="error"></div>
     </div>
     <div class="row text-center">
-        <?php if(!empty($_GET['search'])){?>
+        <?php if (!empty($_GET['search'])) {?>
         <h3>ผลการค้นหาพบ <?php echo $total_record;?> รายการ</h3>
         <?php } ?>
 
-        <?php while($row = mysqli_fetch_assoc($query)){?>
+        <?php while ($row = mysqli_fetch_assoc($query)) {?>
         <div class="four columns no-margin">
             <div class="product-grid text-center">
               <a href="?action=product&product=<?php echo $row['prod_id'];?>">
@@ -72,20 +71,20 @@ $row2 = mysqli_fetch_assoc($query2);
                     <p class="font-12x no-margin"><?php echo $row['prod_name'];?></p>
                 </small>
                 <small class="font-12x no-margin">฿
-                    <?php if($row['prod_discount'] > 0){
-                    echo "<i style='text-decoration: line-through;'>".number_format($row['prod_price'], 2, '.', ',').'</i> ';
-                    $price = $row['prod_price'];
-                    $discount = $row['prod_discount'];
-                    $total = $price-($price*$discount/100);
+                    <?php if ($row['prod_discount'] > 0) {
+                        echo "<i style='text-decoration: line-through;'>".number_format($row['prod_price'], 2, '.', ',').'</i> ';
+                        $price = $row['prod_price'];
+                        $discount = $row['prod_discount'];
+                        $total = $price-($price*$discount/100);
 
-                    echo "<b class='text-red'>".number_format($total, 2, '.', ',').'</b>';
-                }else {
-                  echo number_format($row['prod_price'], 2, '.', ',');
-                }?></small>
+                        echo "<b class='text-red'>".number_format($total, 2, '.', ',').'</b>';
+} else {
+    echo number_format($row['prod_price'], 2, '.', ',');
+}?></small>
                 <button type="button" onclick="return addcrt(<?php echo $row['prod_id'];?>, 1)" name="addtocart"><i class="fa fa-fw fa-shopping-basket" aria-hidden="true"></i> เพิ่มสินค้าลงตะกร้า</button>
             </div>
         </div>
-        <?php } if($num_row == 0) {?>
+        <?php } if ($num_row == 0) {?>
         <p class="text-center">ไม่พบรายการสินค้าในหมวดหมู่นี้</p>
         <script type="text/javascript">
           setTimeout(function() {
@@ -97,8 +96,10 @@ $row2 = mysqli_fetch_assoc($query2);
 
     <div class="row text-center">
         <ul class="pagination">
-            <?php for($i=1 ; $i<=$total_page ; $i++){ ?>
-            <li><a <?php if ($page==$i) { echo 'class="active"'; } ?> href="?p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+            <?php for ($i=1; $i<=$total_page; $i++) { ?>
+            <li><a <?php if ($page==$i) {
+                echo 'class="active"';
+} ?> href="?action=<?php echo $_GET['action']; ?>&filter=<?php echo $_GET['filter']; ?>&p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
             <?php } ?>
         </ul>
     </div>
