@@ -1,8 +1,8 @@
 <?php
 
-$host = "localhost";
-$username = "root";
-$password = "";
+$host = "anm-db-asia.cxfcplsls1ts.ap-southeast-1.rds.amazonaws.com";
+$username = "anm_client";
+$password = "CfTyPG#rQB_U5rb3E.}q";
 $dbname = "finalproject_030";
 
 // เชื่อต่อฐานข้อมูล
