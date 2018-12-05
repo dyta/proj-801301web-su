@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 if(!empty($_GET['action'])){
 
     $page = mysqli_escape_string($DBConnect, $_GET['action']);

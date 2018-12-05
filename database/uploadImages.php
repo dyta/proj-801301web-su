@@ -39,7 +39,6 @@ if ($_SESSION['user_group'] !=1) {
     </form>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="assets/js/validation.js"></script>
-    <script src="https://use.fontawesome.com/7bd307103a.js"></script>
   </body>
 </html>
 <?php

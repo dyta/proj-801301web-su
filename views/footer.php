@@ -24,31 +24,26 @@
             </div>
             <div class="four columns no-margin">
                 <ul>
-                    <h6>เครือข่ายสังคม</h6>
-                    <p><a href="https://www.facebook.com/tta.nattawut" target="_blank" ><span class="fa-stack fa-lg">
-                    <i class="fa fa-circle-thin fa-stack-2x"></i>
-                    <i class="fa fa-facebook fa-stack-1x"></i>
+                    <h6>ติดต่อเรา</h6>
+                    <p><a href="https://www.facebook.com/tta.nattawut" target="_blank" >
+                    <i class="fab fa-2x fa-facebook"></i>
                   </span></a>
                         
-                        <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle-thin fa-stack-2x"></i>
-                    <i class="fa fa-twitter fa-stack-1x"></i>
-                  </span>
-                        <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle-thin fa-stack-2x"></i>
-                    <i class="fa fa-google-plus fa-stack-1x"></i>
-                  </span>
+                  <i class="fab fa-2x fa-twitter"></i>
+                  <i class="fab fa-2x fa-google-plus-g"></i>
                     </p>
                 </ul>
                 <ul>
                     <h6>ปลอดภัยด้วยการชำระเงินออนไลน์</h6>
                     <p>
-                        <i class="fa fa-fw fa-3x fa-google-wallet" aria-hidden="true"></i>
-                        <i class="fa fa-fw fa-3x fa-cc-paypal" aria-hidden="true"></i>
-                        <i class="fa fa-fw fa-3x fa-cc-visa" aria-hidden="true"></i>
-                        <i class="fa fa-fw fa-3x fa-cc-amex" aria-hidden="true"></i>
-                        <i class="fa fa-fw fa-3x fa-cc-discover" aria-hidden="true"></i>
-                        <i class="fa fa-fw fa-3x fa-cc-mastercard" aria-hidden="true"></i>
+                        <i class="fab fa-3x fa-cc-visa"></i>
+                        <i class="fab fa-3x fa-cc-mastercard"></i>
+                        <i class="fab fa-3x fa-cc-paypal"></i>
+                        <i class="fab fa-3x fa-cc-jcb"></i>
+                        <i class="fab fa-3x fa-cc-discover"></i>
+                        <i class="fab fa-3x fa-apple-pay"></i>
+                        <i class="fab fa-3x fa-amazon-pay"></i>
+                        <i class="fab fa-3x fa-alipay"></i>
                     </p>
                 </ul>
             </div>
@@ -64,7 +59,7 @@
 
 <script type="text/javascript" src="lib/js/validation.min.js" async></script>
 <script type="text/javascript" src="lib/js/tools.min.js" async></script>
-<script src="https://use.fontawesome.com/7bd307103a.js" async></script>
+
 <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -78,8 +73,24 @@
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-88376110-1', 'auto');
+    ga('create', 'UA-104055700-1', 'auto');
     ga('send', 'pageview');
+</script>
+<script>
+var coll = document.getElementsByClassName("collapsible_demo");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
 </script>
 </body>
 
